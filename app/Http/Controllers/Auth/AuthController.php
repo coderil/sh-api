@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
-use App\Http\Requests\Auth\RegisterRequest;
+use App\Http\Requests\Auth\{LoginRequest,RegisterRequest};
+use App\Http\Resources\UserResource;
+use App\Mail\TestMail;
 use App\Traits\ResponseAPI;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Support\Facades\{Auth,Mail};
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -16,25 +20,28 @@ class AuthController extends Controller
 
     public function register(RegisterRequest $request) {
 
-        $user = User::create([
+        try {
+            DB::beginTransaction();
+            $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
             'phone_number' => $request->phone_number
-        ]);
+            ]);
 
-        if ($request->role) {
-            $user->assignRole($request->role);
+            if ($request->role) {
+                $user->assignRole($request->role);
+            }
+            event(new Registered($user));
+
+            DB::commit();    
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return $this->error('An error occured: ' . $e);
         }
-
-        $userData = [
-            'name' => $user->name,
-            'email' => $user->email,
-            'phone_number' => $user->phone_number,
-            'role' => $user->getRoleNames()->first() ?? null
-        ];
-
-        return $this->success("User registered", $userData, 201);
+        
+        return $this->success("User registered", new UserResource($user), 201);
     }
 
     public function login(LoginRequest $request) {
@@ -66,3 +73,5 @@ class AuthController extends Controller
         return $this->success('Logged out');
     }
 }
+
+
