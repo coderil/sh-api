@@ -26,7 +26,8 @@ class ProductFactory extends Factory
             'name' => fake()->word(),
             'price' => fake()->numberBetween(100, 1000),
             'description' => fake()->sentence(),
-            'category' => fake()->randomElement($categories)
+            'category' => fake()->randomElement($categories),
+            'stocks' => 100
         ];
     }
 }
