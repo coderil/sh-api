@@ -14,7 +14,8 @@ return new class extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('owner_id')->constrained('users')->unique();
+            $table->unsignedBigInteger('owner_id')->unique();
+            $table->foreign('owner_id')->references('id')->on('users')->cascadeOnDelete();
             $table->string('name');
             $table->text('description');
             $table->string('logo')->nullable();
