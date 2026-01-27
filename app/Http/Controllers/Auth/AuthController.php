@@ -32,7 +32,7 @@ class AuthController extends Controller
             if ($request->role) {
                 $user->assignRole($request->role);
             }
-            event(new Registered($user));
+            // event(new Registered($user));
 
             DB::commit();    
 

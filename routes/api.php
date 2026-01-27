@@ -11,36 +11,39 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::group([
-    'prefix' => 'users'
-], function($route) {
-    $route->post('/register', [AuthController::class, 'register']);
-    $route->post('/login', [AuthController::class, 'login']);
-
-    $route->post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+//      Public Routes
+Route::prefix('users')->group(function() {
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/login', [AuthController::class, 'login']);
 });
 
-// Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])->middleware(['auth:sanctum', 'signed'])->name('verification.verify');
-
-Route::group([
-    'prefix' => 'shops',
-    'middleware' => 'auth:sanctum'
-], function($route) {
-    $route->get('/', [ShopController::class, 'index']);
-    $route->post('/', [ShopController::class, 'store']);
-    $route->get('/{shop}', [ShopController::class, 'show']);
-    $route->put('/{shop}', [ShopController::class, 'update']);
-    $route->delete('/{shop}', [ShopController::class, 'destroy']);
+Route::controller(ShopController::class)->group(function() {
+    Route::get('/shops', 'index');
+    Route::get('/shops/{shop}');
 });
 
-Route::group([
-    'prefix' => 'products'
-], function($route) {
-    $route->get('/', [ProductController::class, 'index']);
-    $route->get('/{id}', [ProductController::class, 'show']);
-
-    $route->post('/', [ProductController::class, 'store']);
-    $route->post('/{id}', [ProductController::class, 'update']);
-    $route->post('/{id}', [ProductController::class, 'destroy']);
+Route::controller(ProductController::class)->group(function() {
+    Route::get('/products', 'index');
+    Route::get('/products/{product}');
 });
 
+//      Protected Routes
+Route::middleware('auth:sanctum')->group(function() {
+    Route::prefix('users')->group(function() {
+        Route::post('/logout', [AuthController::class, 'logout']);
+    });
+
+    Route::controller(ShopController::class)->group(function() {
+        Route::post('/shops', 'index');
+        Route::put('/shops/{shop}', 'update');
+        Route::delete('/shops/{shop}', 'destroy');
+        // Route::post('/shops/{id}/deactivate', 'deactivate');
+        // Route::post('/shops/{id}/activate', 'activate');
+    });
+
+    Route::controller(ProductController::class)->group(function() {
+        Route::post('/products', 'index');
+        Route::put('/products/{product}', 'update');
+        Route::delete('/products/{product}', 'destroy');
+    });
+});
