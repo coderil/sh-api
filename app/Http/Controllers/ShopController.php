@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Shop;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Shop\StoreShopRequest;
 use App\Http\Resources\ShopResource;
-use App\Models\Shop\Shop;
+use App\Models\Shop;
 use App\Traits\ResponseAPI;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Exceptions\ExistingShopException;
 use Illuminate\Support\Facades\DB;
 use PDOException;
 
@@ -54,8 +53,6 @@ class ShopController extends Controller
             return $this->error('Something went wrong', $e, 400);
         }
 
-        
-        
         return $this->success('Shop created successfully', new ShopResource($shop), 201);
     }
     public function show(Shop $shop) {

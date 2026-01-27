@@ -2,10 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Product\ProductController;
-use App\Http\Controllers\Shop\ShopController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
