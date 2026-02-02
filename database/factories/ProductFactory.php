@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Shop;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
@@ -17,10 +18,12 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         $categories = ['Technology', 'Clothing', 'Food', 'Health', 'Hardware'];
+        $shops = Shop::pluck('id');
 
         return [
+            'shop_id' => fake()->randomElement($shops),
             'name' => fake()->word(),
-            'price' => fake()->numberBetween(100, 1000),
+            'base_price' => fake()->numberBetween(100, 1000),
             'description' => fake()->sentence(),
             'category' => fake()->randomElement($categories),
             'stocks' => 100

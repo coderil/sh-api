@@ -13,6 +13,8 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create(['email' => 'test@gmail.com']);
+        for($i = 1; $i <= 5; $i++) {
+            User::factory()->create(['email' => 'seller'. $i .'@gmail.com']);
+        }
     }
 }

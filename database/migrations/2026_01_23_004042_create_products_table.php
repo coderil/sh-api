@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Shop;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
@@ -14,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->foreignId('shop_id')->constrained();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->integer('price');
+            $table->integer('base_price');
             $table->string('category'); //temp
             $table->unsignedInteger('stocks');
             $table->timestamps();
