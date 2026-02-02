@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_variation_id')->constrained()->cascadeOnDelete();
             $table->string('name');
-            $table->string('image_url');
             $table->timestamps();
         });
     }

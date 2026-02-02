@@ -15,7 +15,13 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
 
-        Product::factory()->count(20)->create();
+        $shops = Shop::pluck('id');
+        
+        for($i = 0; $i < 20; $i++) {
+            Product::factory()->create([
+                'shop_id' => fake()->randomElement($shops)
+            ]);
+        }
         
     }
 }
