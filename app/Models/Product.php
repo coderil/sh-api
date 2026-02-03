@@ -19,4 +19,9 @@ class Product extends Model
     public function shop() {
         return $this->belongsTo(Shop::class);
     }
+
+    public function options() {
+        return $this->hasManyThrough(ProductVariationOption::class, ProductVariation::class);
+    }
+    
 }

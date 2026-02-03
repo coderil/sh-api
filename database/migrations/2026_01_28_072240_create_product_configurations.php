@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('product_item_id')->constrained()->cascadeOnDelete();
             $table->foreignId('product_variation_id')->constrained()->cascadeOnDelete();
             $table->foreignId('product_variation_option_id')->constrained()->cascadeOnDelete();
-            $table->unique(['product_item_id', 'product_variation_id'], 'item_variation_unique');
+            $table->unique(['product_item_id', 'product_variation_id', 'product_variation_option_id'], 'item_variation_unique');
             $table->timestamps();
         });
     }

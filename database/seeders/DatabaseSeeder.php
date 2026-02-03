@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
         User::factory()->create([
             'name' => 'haerin',
@@ -27,7 +26,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ShopSeeder::class,
             ProductSeeder::class,
-            ProductVariationSeeder::class
+            ProductVariationSeeder::class,
+            ProductItemSeeder::class
         ]);
     }
 }
