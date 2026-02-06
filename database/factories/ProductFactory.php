@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Shop;
+
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
@@ -17,13 +19,16 @@ class ProductFactory extends Factory
 
     public function definition(): array
     {
-        $categories = ['Technology', 'Clothing', 'Food', 'Health', 'Hardware'];
+        $faker = \Faker\Factory::create();
+        $faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
+
+        // $categories = ['Technology', 'Clothing', 'Food', 'Health', 'Hardware'];
 
         return [
-            'name' => fake()->word(),
+            'name' => $faker->productName(),
             'base_price' => fake()->numberBetween(100, 1000),
             'description' => fake()->sentence(),
-            'category' => fake()->randomElement($categories),
+            'category' => $faker->category,
             'stocks' => fake()->numberBetween(10, 100)
         ];
     }
