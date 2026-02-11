@@ -29,7 +29,8 @@ class ProductFactory extends Factory
             'base_price' => fake()->numberBetween(100, 1000),
             'description' => fake()->sentence(),
             'category' => $faker->category,
-            'stocks' => fake()->numberBetween(10, 100)
+            'stocks' => fake()->numberBetween(10, 100),
+            'sold' => fake()->numberBetween(0, 20000)
         ];
     }
 }

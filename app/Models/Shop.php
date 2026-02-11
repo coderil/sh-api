@@ -13,7 +13,7 @@ class Shop extends Model implements Searchable
     use HasFactory;
 
     protected $fillable = [
-        'owner_id', 'name', 'description', 'logo'
+        'owner_id', 'name', 'description', 'logo', 'location', 'vacation_mode'
     ];
 
     public function getSearchResult(): SearchResult

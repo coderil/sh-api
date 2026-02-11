@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +14,7 @@ class Product extends Model implements Searchable
 {
     use HasFactory;
 
-    protected $fillable = ['shop_id','name', 'base_price', 'description', 'category', 'stocks'];
+    protected $fillable = ['shop_id','name', 'base_price', 'description', 'category', 'stocks', 'sold'];
 
     public function getSearchResult(): SearchResult
     {

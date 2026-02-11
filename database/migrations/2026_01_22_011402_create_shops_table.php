@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('logo')->nullable();
+            $table->boolean('vacation_mode')->default(false);
+            $table->string('location'); //temp for address
             //images 
             $table->timestamps();
         });

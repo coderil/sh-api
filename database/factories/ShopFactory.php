@@ -20,6 +20,8 @@ class ShopFactory extends Factory
         return [
             'name' => fake()->company(),
             'description' => fake()->sentence(),
+            'vacation_mode' => fake()->boolean(),
+            'location' => fake()->country()
         ];
     }
 }

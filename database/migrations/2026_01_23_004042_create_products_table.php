@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('base_price');
             $table->string('category'); //temp
             $table->unsignedInteger('stocks');
+            $table->unsignedInteger('sold')->default(0);
             $table->timestamps();
         });
     }
