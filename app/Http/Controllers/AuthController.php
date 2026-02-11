@@ -5,19 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\{LoginRequest,RegisterRequest};
 use App\Http\Resources\UserResource;
-use App\Mail\TestMail;
 use App\Traits\ResponseAPI;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use Illuminate\Support\Facades\{Auth,Mail};
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
-    use ResponseAPI;
-
     public function register(RegisterRequest $request) {
 
         try {
@@ -32,9 +27,9 @@ class AuthController extends Controller
             if ($request->role) {
                 $user->assignRole($request->role);
             }
-            // event(new Registered($user));
 
             DB::commit();    
+        
 
         } catch (\Exception $e) {
             DB::rollBack();

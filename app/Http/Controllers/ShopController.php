@@ -14,8 +14,6 @@ use PDOException;
 
 class ShopController extends Controller
 {
-    use ResponseAPI;
-
     public function index() {
         
     }
