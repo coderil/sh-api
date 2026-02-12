@@ -23,7 +23,7 @@ Route::controller(ShopController::class)->group(function() {
 
 Route::controller(ProductController::class)->group(function() {
     Route::get('/products', 'index');
-    Route::get('/products/{product}');
+    Route::get('/products/{product}', 'show');
 });
 
 //      Protected Routes
@@ -33,7 +33,7 @@ Route::middleware('auth:sanctum')->group(function() {
     });
 
     Route::controller(ShopController::class)->group(function() {
-        Route::post('/shops', 'index');
+        Route::post('/shops', 'store');
         Route::put('/shops/{shop}', 'update');
         Route::delete('/shops/{shop}', 'destroy');
         // Route::post('/shops/{id}/deactivate', 'deactivate');
@@ -41,7 +41,7 @@ Route::middleware('auth:sanctum')->group(function() {
     });
 
     Route::controller(ProductController::class)->group(function() {
-        Route::post('/products', 'index');
+        Route::post('/products', 'store');
         Route::put('/products/{product}', 'update');
         Route::delete('/products/{product}', 'destroy');
     });
