@@ -5,6 +5,7 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -27,4 +28,9 @@ return Application::configure(basePath: dirname(__DIR__))
                 "message" => 'Route not found'
             ]);
         }); 
+        $exceptions->renderable(function(AccessDeniedHttpException $e) {
+            return response()->json([
+                'message' => 'Unauthorized'
+            ]);
+        });
     })->create();
