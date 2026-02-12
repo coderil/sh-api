@@ -12,10 +12,18 @@ use Spatie\QueryBuilder\ {
     AllowedFilter,
     QueryBuilder
 };
-
+use App\Http\Requests\Product\StoreProductRequest;
+use App\Http\Requests\Product\UpdateProductRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Product::class, 'product');    
+    }
+
     public function index(IndexProductRequest $request) {
 
         $perPage = $request->input('perPage', 5);
@@ -54,19 +62,43 @@ class ProductController extends Controller
             ]);
     }
 
-    public function show() {
-
+    public function show(Product $product) {
+        return $this->success('Product fetched successfully', new ProductResource($product));
     }
 
-    public function store() {
+    public function store(StoreProductRequest $request) {
+        return DB::transaction(function() use ($request) {
+            $userShop = $request->user()->shop;
 
+            $product = $userShop->products()->create([
+                'name' => $request->name,
+                'description' => $request->description,
+                'base_price' => $request->base_price,
+                'stocks' => $request->stocks,
+                'category' => $request->category,
+            ]);
+
+            return $this->success('Product created successfully', new ProductResource($product), 201);
+        });
     }
 
-    public function update() {
+    public function update(UpdateProductRequest $request, Product $product) {
+        return DB::transaction(function() use ($request, $product) {
+            $product->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'base_price' => $request->base_price,
+                'stocks' => $request->stocks,
+                'category' => $request->category,
+            ]);
 
+            return $this->success('Product updated successfully', new ProductResource($product), 201);
+        });
     }
 
-    public function destroy() {
+    public function destroy(Product $product) {
+        $product->delete();
 
+        return $this->success('Product deleted sucessfully', 204);
     }
 }
