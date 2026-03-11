@@ -56,4 +56,8 @@ class User extends Authenticatable
     public function shop() {
         return $this->hasOne(Shop::class, 'owner_id');
     }
+
+    public function emailVerification() {
+        return $this->hasOne(EmailVerification::class);
+    }
 }

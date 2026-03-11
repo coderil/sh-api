@@ -2,9 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ShopController;
+use App\Http\Controllers\{
+    AuthController,
+    ProductController,
+    ShopController,
+    EmailVerificationController
+};
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -30,6 +34,14 @@ Route::controller(ProductController::class)->group(function() {
 Route::middleware('auth:sanctum')->group(function() {
     Route::prefix('users')->group(function() {
         Route::post('/logout', [AuthController::class, 'logout']);
+    });
+
+    Route::controller(EmailVerificationController::class)
+        ->prefix('email/verification')
+        ->middleware('throttle:3,1')
+        ->group(function() {
+            Route::post('/send', 'send');
+            Route::post('/verify', 'verify');
     });
 
     Route::controller(ShopController::class)->group(function() {

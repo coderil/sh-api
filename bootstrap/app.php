@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Exceptions\ThrottleRequestsException;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
@@ -32,5 +33,10 @@ return Application::configure(basePath: dirname(__DIR__))
             return response()->json([
                 'message' => 'Unauthorized'
             ]);
+        });
+        $exceptions->renderable(function(ThrottleRequestsException $e) {
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 429);
         });
     })->create();
