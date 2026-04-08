@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use AddressInfo;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -30,5 +31,9 @@ class Shop extends Model implements Searchable
 
     public function products() {
         return $this->hasMany(Product::class);
+    }
+
+    public function address() {
+        return $this->morphOne(Address::class, 'addressable');
     }
 }

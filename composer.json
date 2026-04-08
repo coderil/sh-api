@@ -14,6 +14,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
         "mbezhanov/faker-provider-collection": "^2.0",
+        "schoolees/laravel-psgc": "^1.0",
         "spatie/laravel-permission": "^6.24",
         "spatie/laravel-query-builder": "^6.4",
         "spatie/laravel-searchable": "^1.13"

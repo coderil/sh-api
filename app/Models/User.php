@@ -60,4 +60,8 @@ class User extends Authenticatable
     public function emailVerification() {
         return $this->hasOne(EmailVerification::class);
     }
+
+    public function addresses() {
+        return $this->morphMany(Address::class, 'addressable');
+    }
 }

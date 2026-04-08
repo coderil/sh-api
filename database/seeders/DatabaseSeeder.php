@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+            PSGCSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
             ShopSeeder::class,

@@ -9,6 +9,7 @@ use App\Http\Controllers\{
     EmailVerificationController
 };
 
+require __DIR__.'/psgc.php';
 
 Route::get('/user', function (Request $request) {
     return $request->user();
