@@ -13,6 +13,9 @@ use function Symfony\Component\Clock\now;
 
 class EmailVerificationController extends Controller
 {
+    /**
+     * Send Email Verification
+     */
     public function send(Request $request) {
 
         $code = rand(100000, 999999);
@@ -48,6 +51,9 @@ class EmailVerificationController extends Controller
         ]);
     }
 
+    /**
+     * Verify Email
+     */
     public function verify(Request $request) {
         $request->validate([
             'code' => 'required'

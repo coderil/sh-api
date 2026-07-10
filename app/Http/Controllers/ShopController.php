@@ -14,10 +14,16 @@ use PDOException;
 
 class ShopController extends Controller
 {
+    /**
+     * Index Shops
+     */
     public function index() {
         
     }
 
+    /**
+     * Store Shops
+     */
     public function store(StoreShopRequest $request) {
         try {
             DB::beginTransaction();
@@ -53,12 +59,24 @@ class ShopController extends Controller
 
         return $this->success('Shop created successfully', new ShopResource($shop), 201);
     }
+
+    /**
+     * Show Shops
+     */
     public function show(Shop $shop) {
         return $this->success('Shop fetched sucessfully', new ShopResource($shop));
     }
+
+    /**
+     * Update Shops
+     */
     public function update() {
         //
     }
+
+    /**
+     * Delete Shops
+     */
     public function destroy() {
         //
     }

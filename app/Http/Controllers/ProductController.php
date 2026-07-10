@@ -24,6 +24,9 @@ class ProductController extends Controller
         $this->authorizeResource(Product::class, 'product');    
     }
 
+    /**
+     *  Index Products
+     */
     public function index(IndexProductRequest $request) {
 
         $perPage = $request->input('perPage', 5);
@@ -62,10 +65,16 @@ class ProductController extends Controller
             ]);
     }
 
+    /**
+     *  Show Product
+     */
     public function show(Product $product) {
         return $this->success('Product fetched successfully', new ProductResource($product));
     }
 
+    /**
+     *  Store Product
+     */
     public function store(StoreProductRequest $request) {
         return DB::transaction(function() use ($request) {
             $userShop = $request->user()->shop;
@@ -82,6 +91,9 @@ class ProductController extends Controller
         });
     }
 
+    /**
+     *  Update Product
+     */
     public function update(UpdateProductRequest $request, Product $product) {
         return DB::transaction(function() use ($request, $product) {
             $product->update([
@@ -96,6 +108,9 @@ class ProductController extends Controller
         });
     }
 
+    /**
+     *  Delete Product
+     */
     public function destroy(Product $product) {
         $product->delete();
 

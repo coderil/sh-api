@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\{LoginRequest,RegisterRequest};
 use App\Http\Resources\UserResource;
-use App\Traits\ResponseAPI;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +12,9 @@ use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
+    /**
+     *  Register user
+     */
     public function register(RegisterRequest $request) {
 
         try {
@@ -39,6 +41,9 @@ class AuthController extends Controller
         return $this->success("User registered", new UserResource($user), 201);
     }
 
+    /**
+     *  Login user
+     */
     public function login(LoginRequest $request) {
         if (! Auth::attempt([
             'email' => $request->email,
@@ -62,6 +67,9 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     *  Logout user
+     */
     public function logout(Request $request) {
         $request->user()->tokens()->delete();
 

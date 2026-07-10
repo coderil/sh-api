@@ -23,7 +23,7 @@ Route::prefix('users')->group(function() {
 
 Route::controller(ShopController::class)->group(function() {
     Route::get('/shops', 'index');
-    Route::get('/shops/{shop}');
+    Route::get('/shops/{shop}', 'show');
 });
 
 Route::controller(ProductController::class)->group(function() {
