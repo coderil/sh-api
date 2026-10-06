@@ -1,0 +1,381 @@
+[
+  {
+    "name": "Audio",
+    "subcategories": [
+      "Audio & Video Cables & Converters",
+      "Earphones, Headphones & Headsets",
+      "Amplifiers & Mixers",
+      "Speakers and Karaoke",
+      "Home Audio & Speakers",
+      "Media Players"
+    ]
+  },
+  {
+    "name": "Babies & Kids",
+    "subcategories": [
+      "Baby Detergent",
+      "Babies' Fashion",
+      "Rain Gear",
+      "Nursery",
+      "Moms & Maternity",
+      "Baby Gear",
+      "Health & Safety",
+      "Bath & Skin Care",
+      "Boys' Fashion",
+      "Girls' Fashion",
+      "Feeding & Nursing",
+      "Feeding",
+      "Diapers & Wipes",
+      "Others"
+    ]
+  },
+  {
+    "name": "Cameras",
+    "subcategories": [
+      "Car / Dash Camera",
+      "Drones",
+      "CCTV / IP Camera",
+      "Action Camera",
+      "Camera Accessories",
+      "Digital Camera",
+      "Others"
+    ]
+  },
+  {
+    "name": "Gaming",
+    "subcategories": [
+      "Computer Gaming",
+      "Mobile Gaming",
+      "Console Gaming",
+      "Others"
+    ]
+  },
+  {
+    "name": "Groceries",
+    "subcategories": [
+      "Seasoning, Staple Foods & Baking Ingredients",
+      "Gift Set & Hampers",
+      "Dairy & Eggs",
+      "Cigarettes",
+      "Superfoods & Healthy Foods",
+      "Breakfast Food",
+      "Snack & Sweets",
+      "Frozen & Fresh foods",
+      "Alcoholic Beverages",
+      "Laundry & Household Care",
+      "Beverages",
+      "Others"
+    ]
+  },
+  {
+    "name": "Health & Personal Care",
+    "subcategories": [
+      "Sexual Wellness",
+      "Medical Supplies",
+      "Men's Grooming",
+      "Health Supplements",
+      "Slimming",
+      "Suncare",
+      "Whitening",
+      "Personal Care",
+      "Bath & Body",
+      "Hair Care",
+      "Skin Care",
+      "Others"
+    ]
+  },
+  {
+    "name": "Hobbies & Stationery",
+    "subcategories": [
+      "E-Books",
+      "Books and Magazines",
+      "Paper Supplies",
+      "Writing Materials",
+      "Religious Artifacts",
+      "Packaging & Wrapping",
+      "Arts & Crafts",
+      "School & Office Supplies",
+      "Musical Instruments",
+      "Others"
+    ]
+  },
+  {
+    "name": "Home & Living",
+    "subcategories": [
+      "Hand Warmers, Hot Water Bags & Ice Bags",
+      "Home Maintenance",
+      "Furniture",
+      "Lighting",
+      "Party Supplies",
+      "Beddings",
+      "Bath",
+      "Glassware & Drinkware",
+      "Dinnerware",
+      "Bakeware",
+      "Kitchenware",
+      "Sinkware",
+      "Power Tools",
+      "Home Improvement",
+      "Storage & Organization",
+      "Home Decor",
+      "Garden Decor",
+      "Outdoor & Garden",
+      "Others"
+    ]
+  },
+  {
+    "name": "Home Appliances",
+    "subcategories": [
+      "Small Household Appliances",
+      "Home Appliance Parts & Accessories",
+      "Large Appliances",
+      "Vacuum Cleaners & Floor Care",
+      "Humidifier & Air Purifier",
+      "Cooling & Heating",
+      "Specialty Appliances",
+      "Small kitchen Appliances",
+      "Garment Care",
+      "Others"
+    ]
+  },
+  {
+    "name": "Home Entertainment",
+    "subcategories": [
+      "Projectors",
+      "TV Accessories",
+      "Television",
+      "Others"
+    ]
+  },
+  {
+    "name": "Laptops & Computers",
+    "subcategories": [
+      "USB Gadgets",
+      "Computer Hardware",
+      "Software",
+      "Printers and Inks",
+      "Storage",
+      "Computer Accessories",
+      "Network Components",
+      "Laptops and Desktops",
+      "Others"
+    ]
+  },
+  {
+    "name": "Makeup & Fragrances",
+    "subcategories": [
+      "Palettes & Makeup Sets",
+      "Tools & Accessories",
+      "Nails",
+      "Fragrances",
+      "Face Makeup",
+      "Lip Makeup",
+      "Eye Makeup",
+      "Others"
+    ]
+  },
+  {
+    "name": "Men's Apparel",
+    "subcategories": [
+      "Tops",
+      "Shorts",
+      "Pants",
+      "Jeans",
+      "Underwear",
+      "Socks",
+      "Hoodies & Sweatshirts",
+      "Jackets & Sweaters",
+      "Sleepwear",
+      "Suits",
+      "Sets",
+      "Occupational Attire",
+      "Traditional Wear",
+      "Costumes",
+      "Others"
+    ]
+  },
+  {
+    "name": "Men's Bags & Accessories",
+    "subcategories": [
+      "Hats & Caps",
+      "Wallets",
+      "Eyewear",
+      "Accessories",
+      "Jewelry",
+      "Watches",
+      "Men's Bags",
+      "Accessories Sets & Packages"
+    ]
+  },
+  {
+    "name": "Men's Shoes",
+    "subcategories": [
+      "Loafer & Boat Shoes",
+      "Sneakers",
+      "Sandals & Flip Flops",
+      "Boots",
+      "Formal",
+      "Shoe Care & Accessories",
+      "Others"
+    ]
+  },
+  {
+    "name": "Mobiles & Gadgets",
+    "subcategories": [
+      "Portable Audio",
+      "Wearables",
+      "E-Cigarettes",
+      "Tablets",
+      "Mobiles",
+      "Mobiles Accessories",
+      "Others Mobile Accessories",
+      "Attachments",
+      "Cases & Covers",
+      "Powerbanks & Chargers"
+    ]
+  },
+  {
+    "name": "Motors",
+    "subcategories": [
+      "Car Care & Detailing",
+      "Automotive Parts",
+      "Engine Parts",
+      "Ignition",
+      "Exterior Car Accessories",
+      "Oils, Coolants, & Fluids",
+      "Car Electronics",
+      "Moto Riding & Protective Gear",
+      "Tools & Garage",
+      "Motorcycle Accessories",
+      "Motorcycle & ATV Parts",
+      "Interior Car Accessories",
+      "Others",
+      "Motorcycles"
+    ]
+  },
+  {
+    "name": "Pet Care",
+    "subcategories": [
+      "Toys & Accessories",
+      "Litter & Toilet",
+      "Pet Essentials",
+      "Pet Clothing & Accessories",
+      "Pet Grooming Supplies",
+      "Pet Toys & Accessories",
+      "Pet Food & Treats",
+      "Others"
+    ]
+  },
+  {
+    "name": "Sports & Travel",
+    "subcategories": [
+      "Travel Bags",
+      "Travel Accessories",
+      "Travel Organizer",
+      "Kid's Activewear",
+      "Boxing & MMA",
+      "Weather Protection",
+      "WinterSports Gear",
+      "Outdoor Recreation",
+      "Leisure Sports & Game Room",
+      "Golf",
+      "Racket Sports",
+      "Sports Bags",
+      "Women's Activewear",
+      "Men's Activewear",
+      "Cycling, Skates & Scooters",
+      "Team Sports",
+      "Water Sports",
+      "Camping & Hiking",
+      "Weightlifting",
+      "Fitness Accessory",
+      "Yoga",
+      "Exercise & Fitness",
+      "Others"
+    ]
+  },
+  {
+    "name": "Toys, Games & Collectibles",
+    "subcategories": [
+      "Celebrity Merchandise",
+      "Dress Up & Pretend",
+      "Blasters & Toy Guns",
+      "Sports & Outdoor Toys",
+      "Dolls",
+      "Educational Toys",
+      "Electronic Toys",
+      "Boards & Family Games",
+      "Collectibles",
+      "Character",
+      "Action Figure",
+      "Others"
+    ]
+  },
+  {
+    "name": "Women Accessories",
+    "subcategories": [
+      "Jewelry",
+      "Watches",
+      "Hair Accessories",
+      "Eyewear",
+      "Wallets & Pouches",
+      "Hats & Caps",
+      "Belts & Scarves",
+      "Gloves",
+      "Accessories Sets & Packages",
+      "Additional Accessories",
+      "Watch & Jewelry Organizers",
+      "Others"
+    ]
+  },
+  {
+    "name": "Women's Apparel",
+    "subcategories": [
+      "Dresses",
+      "Tops",
+      "Tees",
+      "Shorts",
+      "Pants",
+      "Jeans",
+      "Skirts",
+      "Jumpsuits & Rompers",
+      "Lingerie & Nightwear",
+      "Sets",
+      "Swimsuit",
+      "Jackets & Outerwear",
+      "Plus Size",
+      "Sweater & Cardigans",
+      "Maternity Wear",
+      "Socks & Stockings",
+      "Costumes",
+      "Traditional Wear",
+      "Fabric"
+    ]
+  },
+  {
+    "name": "Women's Bags",
+    "subcategories": [
+      "Shoulder Bags",
+      "Tote Bags",
+      "Handbags",
+      "Clutches",
+      "Backpacks",
+      "Drawstrings",
+      "Accessories",
+      "Others"
+    ]
+  },
+  {
+    "name": "Women's Shoes",
+    "subcategories": [
+      "Flats",
+      "Heels",
+      "Flip Flops",
+      "Sneakers",
+      "Wedges & Platforms",
+      "Boots",
+      "Shoe Care & Accessories",
+      "Others"
+    ]
+  }
+]
