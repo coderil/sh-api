@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image_path')->nullable();
-            $table->foreignId('parent_id')->constrained('categories')->restrictOnDelete();
+            $table->foreignId('parent_id')
+                ->nullable()
+                ->constrained('categories')
+                ->restrictOnDelete();
             $table->timestamps();
         });
     }
